@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.core.view.isVisible
 import com.example.a18_searchmap.databinding.ActivityMainBinding
+import com.example.a18_searchmap.model.LocationLatLngEntity
+import com.example.a18_searchmap.model.SearchResultEntity
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,6 +21,8 @@ class MainActivity : AppCompatActivity() {
 
         initAdapter()
         initViews()
+        initData()
+        setData()
     }
 
     private fun initViews() = with(binding) {
@@ -28,12 +32,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initAdapter(){
-        adapter = SearchRecyclerAdapter{
-            Toast.makeText(this, "아이템 클릭" , Toast.LENGTH_SHORT).show()
-        }
+        adapter = SearchRecyclerAdapter()
     }
 
     private fun initData(){
-        
+        adapter.notifyDataSetChanged()
+    }
+
+    private fun setData(){
+        val dataList =(0..10).map {
+            SearchResultEntity(
+                name = "빌딩 $it",
+                fullAdress = "주소 $it",
+                locationLatLng = LocationLatLngEntity(
+                    it.toFloat(),
+                    it.toFloat()
+                )
+            )
+        }
+        adapter.setSearchResultList(dataList){
+
+        }
     }
 }
