@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
     private fun initViews() = with(binding) {
         emptyResultTextView.isVisible = false
         recyclerView.adapter = adapter
-
     }
 
     private fun initAdapter(){
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         val dataList =(0..10).map {
             SearchResultEntity(
                 name = "빌딩 $it",
-                fullAdress = "주소 $it",
+                fullAddress = "주소 $it",
                 locationLatLng = LocationLatLngEntity(
                     it.toFloat(),
                     it.toFloat()
@@ -51,7 +50,6 @@ class MainActivity : AppCompatActivity() {
             )
         }
         adapter.setSearchResultList(dataList){
-
         }
     }
 }
