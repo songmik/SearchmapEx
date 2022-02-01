@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
 
     private fun bindViews() = with(binding){
         searchButton.setOnClickListener {
-            searchKeyword(searchBarInputView.text.toString())
+            searchKeyword(searchInputVIew.text.toString())
 
         }
     }
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
     private fun setData(pois:Pois){
         val dataList =pois.poi.map {
             SearchResultEntity(
-                name = it.name ?: "",
+                name = it.name ?: "빌딩명 없음",
                 fullAddress = makeMainAddress(it),
                 locationLatLng = LocationLatLngEntity(it.noorLat, it.noorLon)
             )

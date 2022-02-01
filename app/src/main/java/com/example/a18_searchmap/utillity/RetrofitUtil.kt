@@ -3,6 +3,7 @@ package com.example.a18_searchmap.utillity
 import com.example.a18_searchmap.BuildConfig
 import com.example.a18_searchmap.Url
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit

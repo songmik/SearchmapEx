@@ -2,6 +2,7 @@ package com.example.a18_searchmap.utillity
 
 import com.example.a18_searchmap.Key
 import com.example.a18_searchmap.Url
+import com.example.a18_searchmap.response.address.AddressInfoResponse
 import com.example.a18_searchmap.response.search.SearchResponse
 import retrofit2.Response
 import retrofit2.http.GET
